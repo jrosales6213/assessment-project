@@ -1,38 +1,132 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: rgb(238, 236, 236);
+  font-family: 'Raleway', sans-serif;
+  /* justify-content: center; */
+}
+.container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  width: 70%;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  border-radius: 1%;
+  box-shadow: 1px 1px 7px rgb(67, 66, 66);
+
+  
+}
+.test-container {
+display: flex;
+ width:100%;
+ flex-direction: row;
+ border-bottom-style: solid;
+ border-width: 0.9px;
+ border-color: rgb(208, 208, 208);
+ 
+
+}
+.img-container {
+  display: flex;
+  margin-right: 20px;
+  padding: 20px;
+  align-items:center;
+}
+img {
+ width: 150px;
+ border: 1px solid;
+ border-radius: 50% ;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.icon-plus {
+  height: 33px;
+  width: 33px;
+  margin-right: 20px;
+  border: none;
+
 }
 
-.App-link {
-  color: #61dafb;
+.card-details {
+  padding-top: 0px;
+  margin-left: 25px;
+  font-size: 1rem;
+  font-weight: 200;
+}
+.card-details p {
+  margin: 0;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Custom Scroll Bar */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2 */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(231, 231, 231); 
+  border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: rgb(218, 218, 218);  */
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c1c0c0; 
+}
+@media only screen and (max-width: 700px) {
+  .card-container {
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+  img {
+    width: 90px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .icon-plus {
+    width: 13px;
+    height: 13px;
+  }
+  .card-details {
+    font-size: 0.9rem;
   }
 }
