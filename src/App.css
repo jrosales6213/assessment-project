@@ -2,6 +2,13 @@
   text-align: center;
 } */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;700&display=swap');
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 
 
@@ -69,12 +76,30 @@ img {
   margin-bottom: 0px;
 }
 .icon-plus {
+  background-image: url('../public/plus-icon.png');
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  border: none;
+  margin-right: 20px;
+  background-color: transparent;
+}
+.icon-minus {
+  background-image: url('../public/minus-sign.png');
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  border: none;
+  margin-right: 20px;
+  background-color: transparent;
+}
+/* .icon-plus {
   height: 33px;
   width: 33px;
   margin-right: 20px;
   border: none;
 
-}
+} */
 
 .card-details {
   padding-top: 0px;
