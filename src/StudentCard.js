@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import ShowGrades from "./ShowGrades";
 
-function StudentCard({key, allStudents, email, company, city, pic, skill}) {
+function StudentCard({ allStudents, email, company, city, pic, skill}) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="container">
-      <div className="card-container">
+    
         <div className="test-container">
       <section className="img-container">
                            <img className="img" src={pic} alt="profile-pic"/>
@@ -15,8 +14,12 @@ function StudentCard({key, allStudents, email, company, city, pic, skill}) {
                          <section className="info-container">
                           <div className="card-header">
                            <h1 className="card-title">{city}</h1>
-                  
-                           <button className="icon-plus" onClick={() => setExpanded(!expanded)}>See Test Scores</button>
+                        {
+                          !expanded && <button className="icon-plus" onClick={() => setExpanded(!expanded)}/>
+                        }
+                        {
+                          expanded && <button className="icon-minus" onClick={() => setExpanded(!expanded)}/> 
+                        }
                            </div>
                            <div className="card-details">
                           <p>Email : <span>{email}</span></p>
@@ -29,8 +32,7 @@ function StudentCard({key, allStudents, email, company, city, pic, skill}) {
                
                          </section>
                 </div>
-      </div>
-    </div>
+  
   )
 }
 
