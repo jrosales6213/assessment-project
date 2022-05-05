@@ -9,9 +9,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   
-
-
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -29,9 +26,12 @@ function App() {
     getData();
   }, []);
 
+
   return (
     <>
-    <StudentCard  props={data}/>
+    {
+      data.map((student, index) =>  <StudentCard key={student.id} allStudents={student} email={student.email} company={student.company}  city={student.city} pic={student.pic} skill={student.skill} grades={student.grades} />)
+    }
     </>
   
   )
