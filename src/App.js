@@ -28,12 +28,11 @@ function App() {
 
 
   return (
-    <>
-    {
-      data.map((student, index) =>  <StudentCard key={student.id} allStudents={student} email={student.email} company={student.company}  city={student.city} pic={student.pic} skill={student.skill} grades={student.grades} />)
-    }
-    </>
-  
+   <div className="container">
+     <div className ="card-container">
+    { data.map((student, index) =>  <StudentCard key={student.id} allStudents={student} email={student.email} company={student.company}  city={student.city} pic={student.pic} skill={student.skill} grades={student.grades} />)}
+     </div>
+     </div>
   )
 }
 export default App;

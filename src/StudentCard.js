@@ -8,6 +8,7 @@ function StudentCard({key, allStudents, email, company, city, pic, skill}) {
   return (
     <div className="container">
       <div className="card-container">
+        <div className="test-container">
       <section className="img-container">
                            <img className="img" src={pic} alt="profile-pic"/>
                          </section>
@@ -15,7 +16,7 @@ function StudentCard({key, allStudents, email, company, city, pic, skill}) {
                           <div className="card-header">
                            <h1 className="card-title">{city}</h1>
                   
-                           <button className="Expand-Button" onClick={() => setExpanded(!expanded)}>See Test Scores</button>
+                           <button className="icon-plus" onClick={() => setExpanded(!expanded)}>See Test Scores</button>
                            </div>
                            <div className="card-details">
                           <p>Email : <span>{email}</span></p>
@@ -27,6 +28,7 @@ function StudentCard({key, allStudents, email, company, city, pic, skill}) {
                           <ShowGrades props={allStudents} expanded={expanded} setExpanded={setExpanded} />
                
                          </section>
+                </div>
       </div>
     </div>
   )
