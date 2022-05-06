@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import StudentCard from './StudentCard';
+import SearchBar from './SearchBar';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   return (
    <div className="container">
      <div className ="card-container">
+       <SearchBar />
     { data.map((student, index) =>  <StudentCard key={student.id} allStudents={student} email={student.email} company={student.company}  city={student.city} pic={student.pic} skill={student.skill} grades={student.grades} />)}
      </div>
      </div>
