@@ -23,8 +23,9 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 .card-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   background-color: whitesmoke;
   width: 70%;
@@ -33,7 +34,7 @@ body {
   height: 500px;
   border-radius: 1%;
   box-shadow: 1px 1px 7px rgb(67, 66, 66);
-  padding-top: 25px;
+  /* padding-top: 25px; */
 
   
 }
@@ -60,9 +61,17 @@ display: flex;
 .input-container {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  background-color: transparent;
-  width: 50%;
+   /* position: fixed;  */
+  /* background-color: transparent;
+  width: 50%; */ 
+}
+.input-container .name {
+  height: 45px;
+  border-style: none;
+}
+.input-container .tag {
+  height: 45px;
+  border-style: none;
 }
 .img-container {
   display: flex;
