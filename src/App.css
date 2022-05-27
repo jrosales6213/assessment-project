@@ -138,6 +138,9 @@ img {
   margin: 0;
   
 }
+.tag-form .tag-input {
+  border-style: none;
+}
 
 
 /* Custom Scroll Bar */
