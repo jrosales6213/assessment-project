@@ -138,6 +138,14 @@ img {
   margin: 0;
   
 }
+.tag-container {
+  display: flex;
+  flex-direction: row;
+}
+.tag-container p {
+  background-color: grey;
+  margin: 5px;
+}
 .tag-form .tag-input {
   border-style: none;
 }

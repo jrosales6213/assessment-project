@@ -3,22 +3,21 @@ import SearchBar from "./SearchBar";
 import ShowGrades from "./ShowGrades";
 import InputTagForm from "./TagInput";
 
-function StudentCard({ allStudents, email, company, city, pic, skill}) {
+function StudentCard({ allStudents, email, company, city, pic, skill, tag, addNewTag}) {
   // function StudentCard({students, addNewTag}) {
   const [expanded, setExpanded] = useState(false);
-  const [tag , setTag] = useState("");
-
+  const [inputTag , setInputTag] = useState([]);
 
 
 
   // const handleNewTag = 
   const gradeAverage =   allStudents.grades.reduce((a,b) => a + parseInt(b), 0) / allStudents.grades.length;
   
-// function handleTagSubmit(e) {
-//   e.preventDefault();
-//   addNewTag(students.id, tag);
-//   setTag("");
-// }
+function handleTagSubmit(e) {
+  e.preventDefault();
+  addNewTag(allStudents.id, inputTag);
+  setInputTag("");
+}
 
   return (
         <div className="test-container">
@@ -37,14 +36,14 @@ function StudentCard({ allStudents, email, company, city, pic, skill}) {
               <p>Skill :   <span>{skill}</span></p>
               <p>Average : <span>{gradeAverage} %</span></p>     
           </div> 
-          {/* <div>
-            <p>{newTag}</p>
-          </div> */}
-          {/* <div className="tag-section">
-            <form className="tag-form">
-              <input className="tag-input" type="text" placeholder="Add a Tag" value={tag} onChange={(e) => setTag(e.target.value)}/>
+          <div className="tag-container">
+            {tag.map((t, index) => <p key={index}>{t}</p>)}
+          </div>
+          <div className="tag-section">
+            <form className="tag-form" onSubmit = {(e) => handleTagSubmit(e)}>
+              <input className="tag-input" type="text" placeholder="Add a Tag" value={inputTag} onChange={(e) => setInputTag(e.target.value.toLocaleLowerCase())}/>
             </form>
-          </div> */}
+          </div>
            {/* <InputTagForm newTag={newTag} setNewTag={setNewTag}/> */}
          {/* <ShowGrades props={students} expanded={expanded} setExpanded={setExpanded} /> */}
          <ShowGrades props={allStudents} expanded={expanded} setExpanded={setExpanded} />
