@@ -41,7 +41,7 @@ function handleTagSubmit(e) {
           </div>
           <div className="tag-section">
             <form className="tag-form" onSubmit = {(e) => handleTagSubmit(e)}>
-              <input className="tag-input" type="text" placeholder="Add a Tag" value={inputTag} onChange={(e) => setInputTag(e.target.value.toLocaleLowerCase())}/>
+              <input className="tag-input" type="text" placeholder="Add a Tag" value={inputTag} onChange={(e) => setInputTag(e.target.value.toLowerCase())}/>
             </form>
           </div>
            {/* <InputTagForm newTag={newTag} setNewTag={setNewTag}/> */}

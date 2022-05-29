@@ -16,7 +16,28 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   
-  console.log(tag)
+console.log(tag)
+// this funciton return only the tags. watn to return the whole filter array. 
+//   function filterTags() {
+//     let testSlip = students.map((item) => item.tags);
+//     let secondLoop = students.map(item => item.tags).filter(item => item.includes("hello"));
+//     // let results = secondLoop.filter(word => word);
+//     console.log(secondLoop);
+//   }
+
+// function secondFilterArray() {
+//   const testFilter = students.filter(student => student.tags.includes("hello"));
+//   console.log(testFilter);
+// }
+//  secondFilterArray();
+
+//   const newTest = students.filter( );
+//   const testStudents =  students.filter(student => student.firstName.toLowerCase().includes(search.toLowerCase()))
+//  console.log(newTest)
+//  console.log(testStudents)
+  //  console.log(new
+//  const mapTest = newTest.map(item => item.tag);
+//  console.log(mapTest)
 
   // student.tags.toLowerCase().includes(search.toLowerCase())
   // useEffect(() => {
@@ -88,20 +109,17 @@ function App() {
 //   } 
 // }
 // const mapIsDone = students.map((tag) => tag.tags)
-function mapOver (element){
-for (let tags of element) {
-  return tags.tags;
-}
-}
-console.log(mapOver(students))
+
+
 
 
   const filteredStudents = students.filter(student =>
-    student.firstName.toLowerCase().includes(search.toLowerCase()) || student.lastName.toLowerCase().includes(search.toLowerCase()));
+    student.firstName.toLowerCase().includes(search.toLowerCase()) || student.lastName.toLowerCase().includes(search.toLowerCase()) || student.tags.includes(tag));
  
+    // data.filter((item) => item.tag).map((item) => item.tag).map((item) => item.includes("message"));
 
     // Add Tag function
-   
+  //  console.log(filteredStudents)
   return (
    <div className="container">
      <div className ="card-container">
