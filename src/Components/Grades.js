@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function ShowGrades({props, expanded}) {
     return (
         <>
@@ -10,6 +9,5 @@ function ShowGrades({props, expanded}) {
         </>
     )
 }
-
 
 export default ShowGrades;

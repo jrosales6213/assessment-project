@@ -1,10 +1,6 @@
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 import React from "react";
 
-
 function SearchBar({setSearch, search, tag , setTag}) {
-
-    
     return (
         <form className="input-container">
         <input className="name" type="text" value={search} onChange={(e)=> setSearch(e.target.value)} placeholder="Search By Name"></input>

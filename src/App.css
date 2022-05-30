@@ -10,12 +10,9 @@
   'opsz' 48
 }
 
-
-
 body {
   background-color: rgb(238, 236, 236);
   font-family: 'Raleway', sans-serif;
-  /* justify-content: center; */
 }
 .container {
   display: flex;
@@ -25,18 +22,15 @@ body {
 }
 
 .card-container {
-  /* display: flex; */
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: white;
   width: 70%;
   overflow: scroll;
   overflow-x: hidden;
   height: 500px;
   border-radius: 1%;
   box-shadow: 1px 1px 7px rgb(67, 66, 66);
-  /* padding-top: 25px; */
-
-  
+ 
 }
 .test-container {
 display: flex;
@@ -47,23 +41,9 @@ display: flex;
  border-color: rgb(208, 208, 208);
 
 }
-/* .input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height:30px;
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-
-} */
 .input-container {
   display: flex;
   flex-direction: column;
-   /* position: fixed;  */
-  /* background-color: transparent;
-  width: 50%; */ 
 }
 .input-container .name {
   height: 45px;
@@ -120,14 +100,6 @@ img {
   margin-right: 20px;
   background-color: transparent;
 }
-/* .icon-plus {
-  height: 33px;
-  width: 33px;
-  margin-right: 20px;
-  border: none;
-
-} */
-
 .card-details {
   padding-top: 0px;
   margin-left: 25px;
@@ -143,16 +115,18 @@ img {
   flex-direction: row;
 }
 .tag-container p {
-  background-color: grey;
-  margin: 5px;
+  background-color: rgb(205, 205, 205);
+  margin: 4px;
+  border-radius: 2px;
+  padding: 3px 5px 3px 5px;
+ 
+}
+.tag-section {
+  margin: 8px;
 }
 .tag-form .tag-input {
-  border-style: none;
+  height: 25px;
 }
-
-
-/* Custom Scroll Bar */
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2 */
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -166,7 +140,6 @@ img {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  /* background: rgb(218, 218, 218);  */
   background-color: whitesmoke;
   border-radius: 4px;
 }
