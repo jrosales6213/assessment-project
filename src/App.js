@@ -1,25 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import StudentCard from './Components/StudentCard';
-import SearchBar from './Components/SearchBar';
-import './App.css';
+import React, { useState, useEffect, useMemo } from "react";
+import axios from "axios";
+import StudentCard from "./Components/StudentCard";
+import SearchBar from "./Components/SearchBar";
+import "./App.css";
 
 function App() {
-
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [students, setStudents] = useState([]);
   const [tag, setTag] = useState("");
-  const [searchTag, setSearchTag ] = useState("");
+  const [searchTag, setSearchTag] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(
           `https://api.hatchways.io/assessment/students`
         );
-        newDataKey(response.data)
+        newDataKey(response.data);
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -30,44 +29,54 @@ function App() {
     getData();
   }, []);
 
+  function gradeReducer(grades) {
+    return grades.reduce((a, b) => a + parseInt(b), 0) / grades.length;
+  }
 
+  // Suggestion: Careful not to directly mutate nested values when updating state.
   function newDataKey(data) {
-    const tagKey = [...data.students]
+    const tagKey = [...data.students];
     for (let student of tagKey) {
       student.tags = [];
     }
-    setStudents(tagKey)
+    setStudents(tagKey);
   }
 
   function addNewTag(id, tag) {
     const studentData = [...students];
     for (let student of studentData) {
-      if(id === student.id) {
-        student.tags.push(tag)
+      if (id === student.id) {
+        student.tags.push(tag);
       }
     }
-    setStudents(studentData)
+    setStudents(studentData);
   }
 
-
-  const studentFilter = students.filter((student) => 
-    student.firstName.toLowerCase().includes(search.toLowerCase()) || 
-    student.lastName.toLowerCase().includes(search.toLowerCase()) || 
-    student.tags.includes(tag)
+  // unable to filter by tag name.
+  const studentFilter = students.filter(
+    (student) =>
+      student.firstName.toLowerCase().includes(search.toLowerCase()) ||
+      student.lastName.toLowerCase().includes(search.toLowerCase()) ||
+      student.tags.includes(tag)
   );
-    
+
   return (
-   <div className="container">
-     <div className ="card-container">
-       <SearchBar setSearch={setSearch} setSearchTag={setSearchTag} setTag={setTag} tag={tag}  />
-       {studentFilter.map((student) => 
-       <StudentCard
+    <div className="container">
+      <div className="card-container">
+        <SearchBar
+          setSearch={setSearch}
+          setSearchTag={setSearchTag}
+          setTag={setTag}
+          tag={tag}
+        />
+        {studentFilter.map((student) => (
+          <StudentCard
             key={student.id}
-            studentList={student} 
-            email={student.email} 
-            company={student.company} 
+            studentList={student}
+            email={student.email}
+            company={student.company}
             city={student.city}
-            pic={student.pic} 
+            pic={student.pic}
             skill={student.skill}
             grades={student.grades}
             tag={student.tags}
@@ -75,9 +84,11 @@ function App() {
             lastName={student.lastName}
             addNewTag={addNewTag}
             studentGrades={student.grades}
-          />)}
-     </div>
-   </div>
-  )
+            gradeReducer={gradeReducer}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 export default App;

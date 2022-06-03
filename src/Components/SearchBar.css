@@ -1,0 +1,14 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+.input-container .name {
+  height: 45px;
+  border-style: none;
+  font-size: 1.1rem;
+}
+.input-container .tag {
+  height: 45px;
+  border-style: none;
+  font-size: 1.1rem;
+}

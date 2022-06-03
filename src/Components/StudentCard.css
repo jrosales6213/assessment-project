@@ -1,0 +1,104 @@
+.studentcard-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  border-bottom-style: solid;
+  border-width: 0.9px;
+  border-color: rgb(208, 208, 208);
+}
+.img-container {
+  display: flex;
+  margin-right: 20px;
+  padding: 20px;
+  align-items: center;
+}
+img {
+  width: 150px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.icon-plus {
+  background-image: url("../assests/images/plus-icon.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  border: none;
+  margin-right: 20px;
+  background-color: transparent;
+}
+.icon-minus {
+  background-image: url("../assests/images/minus-sign.png");
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  border: none;
+  margin-right: 20px;
+  background-color: transparent;
+}
+.card-details {
+  padding-top: 0px;
+  margin-left: 25px;
+  font-size: 1rem;
+  font-weight: 200;
+}
+.card-details p {
+  margin: 0;
+}
+.card-details {
+  padding-top: 0px;
+  margin-left: 25px;
+  font-size: 1rem;
+  font-weight: 200;
+}
+.card-details p {
+  margin: 0;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+}
+.tag-container p {
+  background-color: rgb(205, 205, 205);
+  margin: 4px;
+  border-radius: 2px;
+  padding: 3px 5px 3px 5px;
+}
+.tag-section {
+  margin: 8px;
+}
+.tag-form .tag-input {
+  height: 25px;
+}
+@media only screen and (max-width: 700px) {
+  img {
+    width: 90px;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .icon-plus {
+    width: 13px;
+    height: 13px;
+  }
+  .card-details {
+    font-size: 0.9rem;
+  }
+}
