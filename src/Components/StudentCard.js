@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import ShowGrades from "./Grades";
 
-function StudentCard({ studentList, email, company, city, pic, skill, tag, addNewTag}) {
+function StudentCard({ studentList, email, company, pic, skill, firstName, lastName, studentGrades, tag, addNewTag}) {
   const [expanded, setExpanded] = useState(false);
   const [inputTag , setInputTag] = useState([]);
 
-  const gradeAverage = studentList.grades.reduce((a,b) => a + parseInt(b), 0) / studentList.grades.length;
-  
+
+// Previously gradeAverage = studentList.grades.reduce((a,b) => a + parseInt(b), 0) / studentList.grades.length;  
+// Suggested to memoize gradeAverage function. Is this Correct?  
+function gradeReducer(grades) {
+return grades.reduce((a,b) => a + parseInt(b) ,0) / studentList.grades.length;
+}
+const gradeAverage = useMemo(() => gradeReducer(studentGrades), [studentGrades])
+
+
+
 function handleTagSubmit(e) {
   e.preventDefault();
   addNewTag(studentList.id, inputTag);
@@ -20,7 +28,7 @@ function handleTagSubmit(e) {
         </section>
         <section className="info-container">
           <div className="card-header">
-              <h1 className="card-title">{city.toUpperCase()}</h1>
+              <h1 className="card-title">{firstName.toUpperCase()} {lastName.toUpperCase()}</h1>
                { !expanded && <button className="icon-plus" onClick={() => setExpanded(!expanded)}/>  }
                {  expanded && <button className="icon-minus" onClick={() => setExpanded(!expanded)}/> }
            </div>

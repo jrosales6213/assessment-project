@@ -9,7 +9,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [students, setStudents] = useState([]);
   const [tag, setTag] = useState("");
-  const [ searchTag, setSearchTag ] = useState("");
+  const [searchTag, setSearchTag ] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   
@@ -60,7 +60,7 @@ function App() {
    <div className="container">
      <div className ="card-container">
        <SearchBar setSearch={setSearch} setSearchTag={setSearchTag} setTag={setTag} tag={tag}  />
-       {studentFilter.map((student, index) => 
+       {studentFilter.map((student) => 
        <StudentCard
             key={student.id}
             studentList={student} 
@@ -71,7 +71,10 @@ function App() {
             skill={student.skill}
             grades={student.grades}
             tag={student.tags}
+            firstName={student.firstName}
+            lastName={student.lastName}
             addNewTag={addNewTag}
+            studentGrades={student.grades}
           />)}
      </div>
    </div>
