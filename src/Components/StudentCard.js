@@ -23,7 +23,7 @@ function StudentCard({
 
   const gradeAverage = useMemo(
     () => gradeReducer(studentGrades),
-    [studentGrades]
+    []
   );
 
   function handleTagSubmit(e) {
