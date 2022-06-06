@@ -52,13 +52,19 @@ function App() {
     setStudents(studentData);
   }
 
-  // unable to filter by tag name.
-  const studentFilter = students.filter(
-    (student) =>
-      student.firstName.toLowerCase().includes(search.toLowerCase()) ||
-      student.lastName.toLowerCase().includes(search.toLowerCase()) ||
-      student.tags.includes(tag)
-  );
+// filter firstname, lastname , tag
+  const studentFilter = students
+    .filter(
+      (student) =>
+        student.firstName.toLowerCase().includes(search.toLowerCase()) ||
+        student.lastName.toLowerCase().includes(search.toLowerCase())
+    )
+    .filter((student) => {
+      if (tag != "") {
+        return student.tags.find((tagItem) => tagItem.includes(tag));
+      }
+      return true;
+    });
 
   return (
     <div className="container">

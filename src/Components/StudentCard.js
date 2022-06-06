@@ -21,10 +21,7 @@ function StudentCard({
   // Previously gradeAverage = studentList.grades.reduce((a,b) => a + parseInt(b), 0) / studentList.grades.length;
   // Suggested to memoize gradeAverage function and move state up.
 
-  const gradeAverage = useMemo(
-    () => gradeReducer(studentGrades),
-    []
-  );
+  const gradeAverage = useMemo(() => gradeReducer(studentGrades), []);
 
   function handleTagSubmit(e) {
     e.preventDefault();
